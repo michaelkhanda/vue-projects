@@ -1,10 +1,30 @@
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 
-const msg = ref('Hello World!')
+const header = ref('Shopping List App')
+const items = ref([
+  {id: 1, label: "10 party hats"},
+  {id: 2, label:"2 board games"},
+  {id: 3, label: "20 cups"}
+])
+const newItem = ref("")
+const newItemHighPriority = ref(false)
+const icecreamFlavours = ref([])
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg"/>
+  <h1>{{ header }}</h1>
+  <input v-model="newItem" type="text" placeholder="Add an item">
+<!--  {{newItem}}-->
+
+  <label>
+    <input type="checkbox" v-model="newItemHighPriority">
+    High Priority
+  </label>
+
+  <ul>
+    <li v-for="{id, label} in items" :key="id">
+      {{label}}
+    </li>
+  </ul>
 </template>
