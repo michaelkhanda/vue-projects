@@ -32,7 +32,6 @@ export default {
     async getPages() {
       let res = await fetch('pages.json')
       let data = await res.json();
-
       this.pages = data;
     }
   }
