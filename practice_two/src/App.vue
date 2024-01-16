@@ -10,6 +10,7 @@
       :page="pages[activePage]"></page-viewer>
 </template>
 
+
 <script>
 import PageViewer from "@/components/PageViewer.vue";
 import Navbar from "@/components/Navbar.vue";
